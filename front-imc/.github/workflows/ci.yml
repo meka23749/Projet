@@ -1,4 +1,17 @@
-check:
-  script:
-    - pwd
-    - ls -al
+name: Check
+
+on: [push]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Print working directory
+        run: pwd
+
+      - name: List directory
+        run: ls -al
