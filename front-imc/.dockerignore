@@ -1,0 +1,6 @@
+# Ignore all
+*
+
+# keep dist folder
+!/dist
+!/nginx.conf

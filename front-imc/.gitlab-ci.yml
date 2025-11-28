@@ -1,0 +1,9 @@
+variables:
+  PROJECT_TYPE: front
+  PROJECT_NAME: front-imc
+  PROJECT_URL: ams.imc.chillo.fr 
+
+include:
+  - project: bootcamp-devops7241002/pipelines/integration
+    file:
+      - jobs/.run.yml
