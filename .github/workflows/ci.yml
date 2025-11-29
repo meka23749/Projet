@@ -28,8 +28,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Test
-        run: echo "test"
+      - name: list all the current file
+        run: ls -al
 
   package:
     runs-on: ubuntu-latest
@@ -38,8 +38,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Package
-        run: echo "package"
+      - name: list all the current file
+        run: ls -al
 
   build_image:
     runs-on: ubuntu-latest
@@ -48,8 +48,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build image
-        run: echo "build image"
+      - name: list all the current file
+        run: ls -al
 
   deploy:
     runs-on: ubuntu-latest
@@ -58,5 +58,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy
-        run: echo "deploy"
+      - name: list all the current file
+        run: ls -al
