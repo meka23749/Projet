@@ -1,17 +1,56 @@
-name: Check
+name: CI pipeline
 
-on: [push]
+on:
+  push:
+    branches: [main] # adapte si ta branche s'appelle master ou autre
+  pull_request:
 
 jobs:
-  check:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Print working directory
-        run: pwd
+      - name: Build
+        run: echo "build"
 
-      - name: List directory
-        run: ls -al
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Test
+        run: echo "test"
+
+  package:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Package
+        run: echo "package"
+
+  build_image:
+    runs-on: ubuntu-latest
+    needs: package
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: echo "build image"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build_image
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        run: echo "deploy"
