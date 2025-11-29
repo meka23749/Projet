@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Package
-        run: echo "package"
+        run: echo "packag"
 
   build_image:
     runs-on: ubuntu-latest
