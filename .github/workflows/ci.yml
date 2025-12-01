@@ -43,6 +43,9 @@ jobs:
           name: dist
           path: front-imc
 
+      - name: List build-Artefacts
+        run: ls -al front-imc
+
   package:
     runs-on: ubuntu-latest
     needs: test
