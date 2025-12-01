@@ -24,7 +24,7 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: react-build
+          name: dist
           path: front-imc/dist
           if-no-files-found: error
   test:
@@ -40,7 +40,7 @@ jobs:
       - name: Download dist artifact
         uses: actions/download-artifact@v4
         with:
-          name: build-dist
+          name: dist
           path: front-imc
 
   package:
