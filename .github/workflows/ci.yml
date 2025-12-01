@@ -41,10 +41,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
-          path: front-imc/
+          path: front-imc/dist
 
       - name: List build-Artefacts
-        run: ls -al front-imc/assets
+        run: ls -al
 
   package:
     runs-on: ubuntu-latest
