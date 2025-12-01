@@ -44,7 +44,7 @@ jobs:
           path: front-imc
 
       - name: List build-Artefacts
-        run: ls -al front-imc
+        run: ls -al
 
   package:
     runs-on: ubuntu-latest
