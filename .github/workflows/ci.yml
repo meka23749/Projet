@@ -16,26 +16,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-          cache-dependency-path: front-imc/package-lock.json
-
       - name: Install dependencies
-        run: npm ci
+        run: npm install
   build:
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: front-imc
+    needs: install
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: npm install
 
       - name: Build project
         run: npm run build
