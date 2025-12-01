@@ -25,6 +25,8 @@ jobs:
           name: node_modules
           path: front-imc/node_modules/
           if-no-files-found: error
+      - name: List Repos
+        run: ls -al
   build:
     runs-on: ubuntu-latest
     defaults:
@@ -40,6 +42,9 @@ jobs:
         with:
           name: node_modules
           path: front-imc/node_modules
+
+      - name: List Install-Artefacts
+        run: ls -al
 
       - name: Build project
         run: npm run build
