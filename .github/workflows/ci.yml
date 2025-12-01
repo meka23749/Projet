@@ -11,7 +11,6 @@ jobs:
     defaults:
       run:
         working-directory: front-imc
-    needs: install
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
