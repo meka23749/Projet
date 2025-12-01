@@ -6,27 +6,6 @@ on:
   pull_request:
 
 jobs:
-  install:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: front-imc
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: node_modules
-          path: front-imc/node_modules/
-          if-no-files-found: error
-      - name: List Repos
-        run: ls -al
   build:
     runs-on: ubuntu-latest
     defaults:
@@ -37,14 +16,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download node_modules artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: node_modules
-          path: front-imc/node_modules
-
-      - name: List Install-Artefacts
-        run: ls -al
+      - name: Install dependencies
+        run: npm install
 
       - name: Build project
         run: npm run build
