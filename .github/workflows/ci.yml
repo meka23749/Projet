@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: react-build
-          path: front-imc/dist/
+          path: dist
           if-no-files-found: error
   test:
     runs-on: ubuntu-latest
