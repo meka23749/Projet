@@ -1,3 +1,15 @@
-# Logs
-*
-!/dist
+# Ignore node_modules
+node_modules/
+
+# Ignore Git files
+.git/
+.github/
+
+# Ignore local config
+ssh-keys/
+*.log
+
+# DO NOT ignore required files
+!dist/
+!nginx.conf
+!Dockerfile
