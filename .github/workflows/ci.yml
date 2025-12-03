@@ -65,40 +65,40 @@ jobs:
       - name: List build-Artefacts
         run: ls -al
 
-build_image:
-  runs-on: ubuntu-latest
-  env:
-    PROJET_GROUP: meka237
-    PROJET_NAME: front-imc
-    PROJET_VERSION: latest
-  defaults:
-    run:
-      working-directory: front-imc
-  needs: test
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+  build_image:
+    runs-on: ubuntu-latest
+    env:
+      PROJET_GROUP: meka237
+      PROJET_NAME: front-imc
+      PROJET_VERSION: latest
+    defaults:
+      run:
+        working-directory: front-imc
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Download dist artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: dist
-        path: front-imc/dist
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: front-imc/dist
 
-    - name: List build artifact
-      run: ls -al
+      - name: List build artifact
+        run: ls -al
 
-    - name: Login to Docker Hub
-      run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-    - name: Build Docker image
-      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$PROJET_NAME:$PROJET_VERSION .
+      - name: Build Docker image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$PROJET_NAME:$PROJET_VERSION .
 
-    - name: Push Docker image
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/$PROJET_NAME:$PROJET_VERSION
+      - name: Push Docker image
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/$PROJET_NAME:$PROJET_VERSION
 
-    - name: List all Docker images
-      run: docker images
+      - name: List all Docker images
+        run: docker images
 
   deploy:
     runs-on: ubuntu-latest
