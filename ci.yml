@@ -1,0 +1,32 @@
+image: node 21
+stages:
+  - build
+  - test
+  - package
+  - build_image
+  - deploy
+install:
+  stage: build
+  script:
+    - npm ci
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+test:
+  stage: test
+  script:
+    - echo "test"
+package:
+  stage: package
+  script:
+    - echo "test"
+build image:
+  stage: package
+  script:
+    - docker build -t steve/front-imc:latest .
+deploy:
+  stage: deploy
+  script:
+    - echo "deploy"
