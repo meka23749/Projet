@@ -67,6 +67,10 @@ jobs:
 
   build_image:
     runs-on: ubuntu-latest
+    env:
+    PROJET_GROUP: meka237
+    PROJET_NAME: front-imc
+    PROJET_VERSION: latest
     defaults:
       run:
         working-directory: front-imc
@@ -85,7 +89,7 @@ jobs:
         run: ls -al
 
       - name: Build Docker image
-        run: docker build -t meka237/front-imc:latest .
+        run: docker build -t $PROJET_GROUP/$PROJET_NAME:$PROJET_VERSION .
       - name: List all Docker images
         run: docker images
 

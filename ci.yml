@@ -23,9 +23,15 @@ package:
   script:
     - echo "test"
 build image:
+  variables:
+    PROJET_GROUP: meka237
+    PROJET_NAME: front-imc
+    PROJET_VERSION: latest
   stage: package
   script:
-    - docker build -t steve/front-imc:latest .
+    - docker build -t $PROJET_GROUP/$PROJET_NAME:$PROJET_VERSION .
+  after_script:
+    - docker images
 deploy:
   stage: deploy
   script:
