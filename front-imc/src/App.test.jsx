@@ -21,24 +21,24 @@ afterEach(() => {
 
 test('soumet le formulaire et affiche les résultats IMC', async () => {
     render(<App />)
-
+  
     // Remplir les champs
-    fireEvent.change(screen.getByLabelText(/Ihre Größe/i), {
+    fireEvent.change(screen.getByLabelText(/votre taille/i), {
         target: { value: '1.80' },
     })
     fireEvent.change(screen.getByLabelText(/votre poids/i), {
         target: { value: '75' },
     })
     fireEvent.change(screen.getByLabelText(/votre nom/i), {
-        target: { value: 'Achille' },
+        target: { value: 'Steve' },
     })
     fireEvent.change(screen.getByLabelText(/votre email/i), {
-        target: { value: 'achille@example.com' },
+        target: { value: 'steve@example.com' },
     })
 
     // Cliquer sur "Calculer"
     fireEvent.click(screen.getByRole('button', { name: /calculer/i }))
-    expect(await screen.findByText('Votre taille')).toBeVisible()
-    expect(await screen.findByText('Votre poids')).toBeVisible()
+    expect(await screen.findByText('Ihre Größe')).toBeVisible()
+    expect(await screen.findByText('Ihr Gewicht')).toBeVisible()
     
 })
