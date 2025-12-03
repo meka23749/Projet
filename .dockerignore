@@ -1,6 +1,0 @@
-# Ignore 
-*
-
-# keep dist folder
-!dist
-!default.conf
