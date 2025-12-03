@@ -85,7 +85,7 @@ build_image:
         name: dist
         path: front-imc/dist
 
-    - name: List build artifacts
+    - name: List build artifact
       run: ls -al
 
     - name: Login to Docker Hub
