@@ -68,9 +68,9 @@ jobs:
   build_image:
     runs-on: ubuntu-latest
     env:
-    PROJET_GROUP: meka237
-    PROJET_NAME: front-imc
-    PROJET_VERSION: latest
+      PROJET_GROUP: meka237
+      PROJET_NAME: front-imc
+      PROJET_VERSION: latest
     defaults:
       run:
         working-directory: front-imc
