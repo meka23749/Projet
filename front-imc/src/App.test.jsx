@@ -1,4 +1,5 @@
-import { render, fireEvent, waitFor } from '@testing-library/react'
+import { render, fireEvent} from '@testing-library/react'
+import { test, expect, beforeEach, afterEach, vi } from 'vitest'
 import {screen} from '@testing-library/dom'
 import App from './App'
 import '@testing-library/jest-dom'
