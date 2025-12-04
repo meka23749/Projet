@@ -28,8 +28,8 @@ function App() {
   return (
     <section className="ligne container">
       <div className="logo column">
-        <span style={{ fontSize: 30 }}>Berechnen Ihr</span>
-        <span>BMI</span>
+        <span style={{ fontSize: 30 }}>Caculez votre</span>
+        <span>IMC</span>
       </div>
       <div className="column form">
         {imc ? (
@@ -40,7 +40,7 @@ function App() {
         ) : (
           <form onSubmit={readData}>
             <p>
-              <label htmlFor="taille">Ihre Größe</label> <br />
+              <label htmlFor="taille">Votre taille</label> <br />
               <input
                 type="number"
                 name="taille"
@@ -51,7 +51,7 @@ function App() {
               />
             </p>
             <p>
-              <label htmlFor="poids">Ihr Gewicht</label> <br />
+              <label htmlFor="poids">Votre poids</label> <br />
               <input
                 type="number"
                 name="poids"
@@ -62,23 +62,23 @@ function App() {
               />
             </p>
             <p>
-              <label htmlFor="nom">Ihr Name</label> <br />
+              <label htmlFor="nom">Votre nom</label> <br />
               <input
                 type="text"
                 name="nom"
                 id="nom"
-                placeholder="Steve"
+                placeholder="Achille"
                 style={{ fontSize: 20 }}
                 ref={nameRef}
               />
             </p>
             <p>
-              <label htmlFor="email">Ihre E-Mail</label> <br />
+              <label htmlFor="email">Votre email</label> <br />
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="accueil@steve.tech"
+                placeholder="accueil@chillo.tech"
                 style={{ fontSize: 20 }}
                 ref={emailRef}
               />
@@ -87,7 +87,7 @@ function App() {
               type="submit" 
               className="resultat"
             >
-              Berechnen
+              Calculer
             </button>
           </form>
         )}
@@ -97,3 +97,4 @@ function App() {
 }
 
 export default App;
+
