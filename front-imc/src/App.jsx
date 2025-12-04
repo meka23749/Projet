@@ -28,7 +28,7 @@ function App() {
   return (
     <section className="ligne container">
       <div className="logo column">
-        <span style={{ fontSize: 30 }}>Berechnen Ih</span>
+        <span style={{ fontSize: 30 }}>Berechnen Ihr</span>
         <span>BMI</span>
       </div>
       <div className="column form">
