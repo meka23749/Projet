@@ -36,6 +36,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
 
       - name: Download dist artifact
         uses: actions/download-artifact@v4
@@ -45,6 +47,12 @@ jobs:
 
       - name: List build-Artefacts
         run: ls -al
+
+      - name: Run unit tests (Vitest)
+        run: npm run test
+
+      - name: Run ESLint
+        run: npm run lint
 
   package:
     runs-on: ubuntu-latest
