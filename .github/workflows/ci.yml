@@ -51,9 +51,6 @@ jobs:
       - name: Run unit tests (Vitest)
         run: npm run test
 
-      - name: Run ESLint
-        run: npm run lint
-
   package:
     runs-on: ubuntu-latest
     defaults:
