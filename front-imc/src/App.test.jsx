@@ -23,16 +23,16 @@ test('soumet le formulaire et affiche les résultats IMC', async () => {
     render(<App />)
 
     // Remplir les champs
-    fireEvent.change(screen.getByLabelText(/votre taille/i), {
+    fireEvent.change(screen.getByLabelText(/ihre größe"/i), {
         target: { value: '1.80' },
     })
-    fireEvent.change(screen.getByLabelText(/votre poids/i), {
+    fireEvent.change(screen.getByLabelText(/ihr gewicht/i), {
         target: { value: '75' },
     })
-    fireEvent.change(screen.getByLabelText(/votre nom/i), {
+    fireEvent.change(screen.getByLabelText(/ihr name/i), {
         target: { value: 'Achille' },
     })
-    fireEvent.change(screen.getByLabelText(/votre email/i), {
+    fireEvent.change(screen.getByLabelText(/ihre e-mail/i), {
         target: { value: 'achille@example.com' },
     })
 

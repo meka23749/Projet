@@ -40,7 +40,7 @@ function App() {
         ) : (
           <form onSubmit={readData}>
             <p>
-              <label htmlFor="taille">Votre taille</label> <br />
+              <label htmlFor="taille">Ihre Größe</label> <br />
               <input
                 type="number"
                 name="taille"
@@ -51,7 +51,7 @@ function App() {
               />
             </p>
             <p>
-              <label htmlFor="poids">Votre poids</label> <br />
+              <label htmlFor="poids">Ihr Gewicht</label> <br />
               <input
                 type="number"
                 name="poids"
@@ -62,7 +62,7 @@ function App() {
               />
             </p>
             <p>
-              <label htmlFor="nom">Votre nom</label> <br />
+              <label htmlFor="nom">Ihr Name</label> <br />
               <input
                 type="text"
                 name="nom"
@@ -73,7 +73,7 @@ function App() {
               />
             </p>
             <p>
-              <label htmlFor="email">Votre email</label> <br />
+              <label htmlFor="email">Ihre E-Mail</label> <br />
               <input
                 type="email"
                 name="email"
