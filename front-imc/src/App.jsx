@@ -28,8 +28,8 @@ function App() {
   return (
     <section className="ligne container">
       <div className="logo column">
-        <span style={{ fontSize: 30 }}>Caculez votre</span>
-        <span>IMC</span>
+        <span style={{ fontSize: 30 }}>Berechnen Ihr</span>
+        <span>BMI</span>
       </div>
       <div className="column form">
         {imc ? (
@@ -67,7 +67,7 @@ function App() {
                 type="text"
                 name="nom"
                 id="nom"
-                placeholder="Achille"
+                placeholder="Steve"
                 style={{ fontSize: 20 }}
                 ref={nameRef}
               />
@@ -78,7 +78,7 @@ function App() {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="accueil@chillo.tech"
+                placeholder="home@steve.tech"
                 style={{ fontSize: 20 }}
                 ref={emailRef}
               />
@@ -87,7 +87,7 @@ function App() {
               type="submit" 
               className="resultat"
             >
-              Calculer
+              Berechnen
             </button>
           </form>
         )}
