@@ -23,7 +23,7 @@ test('soumet le formulaire et affiche les résultats IMC', async () => {
     render(<App />)
 
     // Remplir les champs
-    fireEvent.change(screen.getByLabelText(/ihre größe"/i), {
+    fireEvent.change(screen.getByLabelText(/ihre größe/i), {
         target: { value: '1.80' },
     })
     fireEvent.change(screen.getByLabelText(/ihr gewicht/i), {
