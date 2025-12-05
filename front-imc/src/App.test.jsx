@@ -38,7 +38,7 @@ test('soumet le formulaire et affiche les résultats IMC', async () => {
 
     // Cliquer sur "Calculer"
     fireEvent.click(screen.getByRole('button', { name: /calculer/i }))
-    expect(await screen.findByText('Votre taille')).toBeVisible()
-    expect(await screen.findByText('Votre poids')).toBeVisible()
+    expect(await screen.findByText('Ihre Größe')).toBeVisible()
+    expect(await screen.findByText('Ihr Gewicht')).toBeVisible()
     
 })
